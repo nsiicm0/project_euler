@@ -5,4 +5,8 @@ All these implementations are designed to have really low time complexity. The w
 
 ## Optimizations
 
-* Challenge 7 can still be further optimized. We are using the sieve of erastothenes, instead sieve of atkin could be used.
+The following challenges can still further be optimized. The do solve the original problem on https://projecteuler.net/ , but the implementation are not always great on extreme test cases.
+* 7
+* 8
+* 9
+* 10
