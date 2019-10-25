@@ -1,6 +1,7 @@
 #!/bin/python3
 
 import sys
+import itertools
 
 def sieve_generator():
     '''
@@ -21,6 +22,27 @@ def sieve_generator():
             # We are past the candidate, so we can delete it
             del composites[candidate]
         candidate += 1
+        
+def sieve_generator2():
+    '''Yields the sequence of prime numbers via the Sieve of Eratosthene.
+    '''
+    composites = dict()
+
+    # skipping first prime
+    yield 2
+    
+    for candidate in itertools.islice(itertools.count(3), 0, None, 2):
+        hit = composites.pop(candidate, None)
+        if hit is None:
+            # candidate is prime case
+            composites[candidate * candidate] = 2 * candidate 
+            yield candidate
+        else:
+            # candidate is not prime case
+            x = hit + candidate
+            while x in composites:
+                x += hit
+            composites[x] = hit
 
 def find_nth_prime(n):
     for i, prime in enumerate(sieve_generator()):
