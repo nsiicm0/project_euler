@@ -10,3 +10,5 @@ The following challenges can still further be optimized. The do solve the origin
 * 8
 * 9
 * 10
+* 12
+* 14
